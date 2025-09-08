@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Villa Hotel - Luxury Eco-Friendly Accommodation</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-green: #2e8b57;
+        --secondary-green: #3cb371;
+        --light-green: #98fb98;
+        --dark-green: #1a3c2d;
+        --neutral-beige: #f5f5dc;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Playfair Display", serif;
+        color: var(--dark-green);
+      }
+
+      .navbar {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: var(--primary-green) !important;
+        font-size: 1.8rem;
+      }
+
+      .nav-link {
+        color: var(--dark-green) !important;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-green) !important;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-green);
+        border-color: var(--primary-green);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--dark-green);
+        border-color: var(--dark-green);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-green);
+        border-color: var(--primary-green);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-green);
+        color: white;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=800&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary-green);
+      }
+
+      .villa-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        background: white;
+      }
+
+      .villa-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .villa-header {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 15px 20px;
+      }
+
+      .facility-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .facility-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .facility-list li:last-child {
+        border-bottom: none;
+      }
+
+      .facility-list li::before {
+        content: "✓";
+        color: var(--primary-green);
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .gallery-item {
+        margin-bottom: 15px;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .gallery-item img {
+        transition: transform 0.5s;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .modal img {
+        width: 100%;
+      }
+
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--primary-green);
+        color: white;
+        transition: all 0.3s;
+        margin-right: 10px;
+      }
+
+      .social-icon:hover {
+        background-color: var(--dark-green);
+        transform: translateY(-3px);
+      }
+
+      .booking-platform {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+        background: white;
+      }
+
+      .booking-platform:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary-green);
+      }
+
+      footer {
+        background-color: var(--dark-green);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      footer a {
+        color: var(--light-green);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-green);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1000;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-leaf me-2"></i>Green Villa
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#villas">Villas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reservations">Reservations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center" id="home">
+      <div class="container">
+        <h1 class="display-3 fw-bold mb-4">Experience Nature's Luxury</h1>
+        <p class="lead mb-4">
+          Eco-friendly villas nestled in pristine natural surroundings
+        </p>
+        <a href="#reservations" class="btn btn-lg btn-primary me-2">Book Now</a>
+        <a href="#villas" class="btn btn-lg btn-outline-light"
+          >Explore Villas</a
+        >
+      </div>
+    </section>
+
+    <!-- Villas Section -->
+    <section id="villas" class="py-5">
+      <div class="container">
+        <h2 class="text-center section-title mx-auto">Our Villas</h2>
+        <p class="text-center mb-5">
+          Each of our villas offers unique experiences and amenities for your
+          perfect getaway
+        </p>
+
+        <div class="row">
+          <!-- Green Villa -->
+          <div class="col-lg-6">
+            <div class="villa-card">
+              <div class="villa-header">
+                <h3 class="mb-0">Green Villa</h3>
+                <p class="mb-0">Capacity: 12 Adults</p>
+              </div>
+              <div class="p-4">
+                <ul class="facility-list">
+                  <li>4 Spacious bedrooms with en-suite bathrooms</li>
+                  <li>Fully equipped modern kitchen</li>
+                  <li>Private swimming pool with panoramic views</li>
+                  <li>Expansive outdoor dining area</li>
+                  <li>Daily housekeeping service</li>
+                  <li>Complimentary WiFi throughout the villa</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Green Mist -->
+          <div class="col-lg-6">
+            <div class="villa-card">
+              <div class="villa-header">
+                <h3 class="mb-0">Green Mist</h3>
+                <p class="mb-0">Capacity: 14 Adults</p>
+              </div>
+              <div class="p-4">
+                <ul class="facility-list">
+                  <li>5 Luxurious bedrooms with mountain views</li>
+                  <li>Infinity pool overlooking the valley</li>
+                  <li>Private chef available upon request</li>
+                  <li>Spacious living area with fireplace</li>
+                  <li>Yoga deck with meditation space</li>
+                  <li>Organic garden with fresh produce</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Green Meadow -->
+          <div class="col-lg-6">
+            <div class="villa-card">
+              <div class="villa-header">
+                <h3 class="mb-0">Green Meadow</h3>
+                <p class="mb-0">Capacity: 15 Adults</p>
+              </div>
+              <div class="p-4">
+                <ul class="facility-list">
+                  <li>6 Elegant bedrooms with panoramic windows</li>
+                  <li>Private hot tub and sauna</li>
+                  <li>Home theater system</li>
+                  <li>Game room with billiards and board games</li>
+                  <li>Barbecue area with outdoor kitchen</li>
+                  <li>Personalized concierge service</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Green Lodge -->
+          <div class="col-lg-6">
+            <div class="villa-card">
+              <div class="villa-header">
+                <h3 class="mb-0">Green Lodge</h3>
+                <p class="mb-0">Capacity: 23 Adults</p>
+              </div>
+              <div class="p-4">
+                <ul class="facility-list">
+                  <li>8 Master suites with private balconies</li>
+                  <li>Two swimming pools (adults and children)</li>
+                  <li>Full-service spa with treatment rooms</li>
+                  <li>Commercial-grade kitchen</li>
+                  <li>Event space for special occasions</li>
+                  <li>24/7 dedicated staff and security</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center section-title mx-auto">Additional Services</h2>
+        <p class="text-center mb-5">
+          Enhance your stay with our unique experiences
+        </p>
+
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <i class="fas fa-utensils fa-3x text-green"></i>
+                </div>
+                <h3 class="text-center mb-3">Local Cooking Classes</h3>
+                <p>
+                  Immerse yourself in the local culture with our authentic
+                  cooking classes led by experienced chefs. Learn to prepare
+                  traditional dishes using fresh, locally-sourced ingredients.
+                </p>
+                <ul>
+                  <li>Hands-on cooking experience</li>
+                  <li>Market tour to select ingredients</li>
+                  <li>Recipe booklet to take home</li>
+                  <li>Enjoy the meal you prepared</li>
+                  <li>Vegetarian and vegan options available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <i class="fas fa-hiking fa-3x text-green"></i>
+                </div>
+                <h3 class="text-center mb-3">Guided Tours</h3>
+                <p>
+                  Discover the natural beauty and cultural heritage of our
+                  region with our carefully curated guided tours. Suitable for
+                  all ages and fitness levels.
+                </p>
+                <ul>
+                  <li>Waterfall and jungle trekking</li>
+                  <li>Sunrise mountain hikes</li>
+                  <li>Local village cultural tours</li>
+                  <li>Wildlife spotting expeditions</li>
+                  <li>Photography tours to scenic spots</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h2 class="text-center section-title mx-auto">Gallery</h2>
+        <p class="text-center mb-5">
+          Take a visual journey through our beautiful villas and surroundings
+        </p>
+
+        <div class="row">
+          <!-- Gallery items - in a real implementation these would be actual villa photos -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Villa Exterior"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1560448076-3f6f44b6b4a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1560448076-3f6f44b6b4a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Luxury Bedroom"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Swimming Pool"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Living Area"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Kitchen"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="img-fluid"
+                alt="Bathroom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="" class="img-fluid" alt="Gallery Image" id="modalImage" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center section-title mx-auto">Make a Reservation</h2>
+        <p class="text-center mb-5">
+          Book your stay through any of our trusted partners
+        </p>
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="booking-platform">
+              <i class="fas fa-hotel fa-3x mb-3 text-primary"></i>
+              <h4>Booking.com</h4>
+              <p>Book through the world's leading travel platform</p>
+              <a href="#" class="btn btn-outline-primary">Book Now</a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="booking-platform">
+              <i class="fab fa-airbnb fa-3x mb-3 text-primary"></i>
+              <h4>Airbnb</h4>
+              <p>Experience our villas through Airbnb</p>
+              <a href="#" class="btn btn-outline-primary">Book Now</a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="booking-platform">
+              <i class="fas fa-globe-asia fa-3x mb-3 text-primary"></i>
+              <h4>Agoda</h4>
+              <p>Find great deals on Agoda</p>
+              <a href="#" class="btn btn-outline-primary">Book Now</a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="booking-platform">
+              <i class="fab fa-whatsapp fa-3x mb-3 text-primary"></i>
+              <h4>WhatsApp</h4>
+              <p>Message us directly for reservations</p>
+              <a href="#" class="btn btn-outline-primary">Message Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map & Reviews Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center section-title mx-auto">Find Us</h2>
+        <p class="text-center mb-5">
+          Visit us at our beautiful location and see what our guests are saying
+        </p>
+
+        <div class="row">
+          <div class="col-lg-8 mb-4">
+            <div class="card h-100">
+              <div class="card-body p-0">
+                <!-- Google Maps placeholder - replace with actual embed code -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 400px;
+                    background-color: #eee;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <p class="text-muted">Google Maps will be embedded here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="mb-4">Guest Reviews</h4>
+                <!-- Reviews placeholder - replace with actual Google Reviews embed -->
+                <div
+                  style="
+                    background-color: #f8f9fa;
+                    padding: 20px;
+                    border-radius: 8px;
+                  "
+                >
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <span class="ms-2">5.0</span>
+                  </div>
+                  <p>
+                    "Absolutely stunning villas with exceptional service. The
+                    perfect eco-luxury getaway!"
+                  </p>
+                  <p class="text-muted">- Sarah M.</p>
+
+                  <div class="d-flex align-items-center mb-3 mt-4">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <span class="ms-2">5.0</span>
+                  </div>
+                  <p>
+                    "The cooking class was a highlight of our trip. Beautiful
+                    surroundings and amazing staff."
+                  </p>
+                  <p class="text-muted">- James K.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h4 class="mb-4">Green Villa</h4>
+            <p>
+              Luxury eco-friendly villas nestled in nature, providing
+              unforgettable experiences and sustainable hospitality.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-threads"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <h4 class="mb-4">Contact Info</h4>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i> 123 Forest Road, Nature
+              Valley, Country
+            </p>
+            <p><i class="fas fa-phone me-2"></i> +1 234 567 8900</p>
+            <p><i class="fas fa-envelope me-2"></i> info@greenvilla.com</p>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <h4 class="mb-4">Quick Links</h4>
+            <p><a href="#home">Home</a></p>
+            <p><a href="#villas">Villas</a></p>
+            <p><a href="#services">Services</a></p>
+            <p><a href="#gallery">Gallery</a></p>
+            <p><a href="#reservations">Reservations</a></p>
+          </div>
+        </div>
+
+        <hr class="my-4 bg-light" />
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p class="mb-0">&copy; 2023 Green Villa. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0">
+              <a href="#">Privacy Policy</a> |
+              <a href="#">Terms of Service</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Gallery modal functionality
+      const galleryModal = document.getElementById("galleryModal");
+      if (galleryModal) {
+        galleryModal.addEventListener("show.bs.modal", function (event) {
+          const button = event.relatedTarget;
+          const imageUrl = button.getAttribute("data-bs-image");
+          const modalImage = galleryModal.querySelector("#modalImage");
+          modalImage.src = imageUrl;
+        });
+      }
+
+      // Back to top button functionality
+      const backToTopButton = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+
+      backToTopButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

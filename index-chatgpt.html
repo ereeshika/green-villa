@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+    Green Villa - Single Page Website
+    Built with Bootstrap 5.3, jQuery (included at user request), and Vanilla JS.
+
+    Instructions:
+    - Replace placeholder links and images with real assets.
+    - Replace gallery images in the <div id="gallery"> with your actual images.
+    - Replace reservation sample links with the real Airbnb / Agoda / Booking.com URLs for each villa.
+    - Replace the Google Maps iframe src with the official embed (if you have a place-specific embed link).
+
+    Author: Generated for the user (Green Villa)
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Green Villa — Villas, Cooking Classes & Tours</title>
+    <meta
+      name="description"
+      content="Green Villa — boutique villas offering accommodation, local cooking classes and curated tours. Book via Airbnb, Agoda or Booking.com."
+    />
+    <meta
+      name="keywords"
+      content="Green Villa, villas, Sri Lanka, cooking classes, tours, accommodation"
+    />
+
+    <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Simple custom styles -->
+    <style>
+      :root {
+        --green-deep: #1b5e20;
+        --green-fresh: #2e7d32;
+        --green-accent: #a5d6a7;
+        --sand: #faf7f0;
+        --dark-text: #212529;
+      }
+      html,
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        color: var(--dark-text);
+        background: var(--sand);
+      }
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: var(--green-deep);
+      }
+      .hero {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 87, 22, 0.05),
+          rgba(165, 214, 167, 0.03)
+        );
+        padding: 6rem 0;
+      }
+      .villa-card {
+        border: 1px solid rgba(33, 37, 41, 0.06);
+        background: white;
+      }
+      .villa-badge {
+        background: var(--green-accent);
+        color: var(--green-deep);
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 6px 10px;
+      }
+      .logo-mark {
+        display: inline-block;
+        font-weight: 700;
+        font-family: "Playfair Display";
+        color: var(--green-deep);
+      }
+      .cta-btn {
+        background: var(--green-deep);
+        color: white;
+        border: none;
+      }
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      footer {
+        background: #f3efe9;
+      }
+      .gallery-img {
+        object-fit: cover;
+        width: 100%;
+        height: 220px;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 576px) {
+        .hero {
+          padding: 3rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-transparent py-3 sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <!-- Site logo placeholder - replace with your actual logo image -->
+          <img
+            src="/favicon.ico"
+            alt="Green Villa logo"
+            width="42"
+            height="42"
+            class="rounded"
+          />
+          <span class="brand fs-4">Green Villa</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#villas">Villas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiences">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#location">Location</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-sm ms-2 cta-btn" href="#contact"
+                >Reserve</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <p class="mb-2 text-uppercase small text-muted">
+              Boutique villas & authentic experiences
+            </p>
+            <h1 class="display-5 brand">Green Villa — Your peaceful retreat</h1>
+            <p class="lead text-muted">
+              Escape to a serene green hideaway. Four spacious villas,
+              personalised cooking classes and curated local tours make Green
+              Villa the perfect base for family gatherings and small group
+              retreats.
+            </p>
+
+            <!-- Hero CTA buttons -->
+            <div class="d-flex gap-2 flex-wrap mt-3">
+              <a href="#villas" class="btn btn-lg cta-btn">View Villas</a>
+              <a href="#experiences" class="btn btn-outline-success btn-lg"
+                >Experiences</a
+              >
+            </div>
+
+            <!-- Quick contact actions -->
+            <div class="mt-4">
+              <a
+                class="me-3"
+                href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20book"
+                target="_blank"
+                >WhatsApp</a
+              >
+              <a href="tel:+1234567890">Call +1 (234) 567-890</a>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <!-- Decorative villa mark / collage placeholder -->
+            <div class="card p-3 villa-card shadow-sm">
+              <div class="p-4 text-center">
+                <div class="logo-mark fs-3 mb-2">Green Villa</div>
+                <p class="small text-muted">
+                  Four villas · Cooking classes · Guided tours
+                </p>
+                <div class="d-flex gap-2 justify-content-center mt-3">
+                  <span class="villa-badge">Green Villa</span>
+                  <span class="villa-badge">Green Mist</span>
+                  <span class="villa-badge">Green Meadow</span>
+                  <span class="villa-badge">Green Lodge</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <div class="col-md-6">
+            <h2 class="brand">About Green Villa</h2>
+            <p class="text-muted">
+              Set among verdant gardens and quiet lanes, Green Villa offers four
+              independent villas each designed for comfort and privacy. Our team
+              curates local experiences — from hands-on cooking classes to
+              immersive cultural and nature tours.
+            </p>
+            <ul>
+              <li>Personalised hospitality and daily housekeeping.</li>
+              <li>Wi-Fi, private kitchens, and flexible check-in options.</li>
+              <li>Sustainability-minded operations and local sourcing.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="card villa-card p-3">
+              <div class="card-body">
+                <h5 class="card-title">Quick Facts</h5>
+                <p class="card-text mb-1">
+                  <strong>Languages:</strong> English
+                </p>
+                <p class="card-text mb-1"><strong>Currency:</strong> USD</p>
+                <p class="card-text mb-0">
+                  <strong>Check-in:</strong> 14:00 ·
+                  <strong>Check-out:</strong> 11:00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VILLAS -->
+    <section id="villas" class="py-5 bg-white">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="brand mb-0">Our Villas</h2>
+          <p class="mb-0 text-muted">
+            Select a villa to view facilities and book via your favourite OTA
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Villa Card Template - no photos inside cards as requested -->
+
+          <!-- GREEN VILLA (12 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <!-- Simple typographic logo-mark per villa -->
+                <div>
+                  <div class="logo-mark">Green Villa</div>
+                  <small class="text-muted">For up to 12 adults</small>
+                </div>
+                <div class="text-end">
+                  <span class="badge bg-success">Popular</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>5 Bedrooms · 4 Bathrooms</li>
+                  <li>Full kitchen · Living area</li>
+                  <li>Wi‑Fi · A/C · Free parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <!-- Reservation buttons to OTAs (sample links) -->
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN MIST (14 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Mist</div>
+                  <small class="text-muted">For up to 14 adults</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>6 Bedrooms · 5 Bathrooms</li>
+                  <li>Outdoor dining area · BBQ</li>
+                  <li>Wi‑Fi · Pool access · Parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN MEADOW (15 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Meadow</div>
+                  <small class="text-muted">For up to 15 adults</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>7 Bedrooms · 6 Bathrooms</li>
+                  <li>Large kitchen · Dining hall</li>
+                  <li>Wi‑Fi · Garden · Parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN LODGE (23 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Lodge</div>
+                  <small class="text-muted">For up to 23 adults</small>
+                </div>
+                <div class="text-end">
+                  <small class="text-muted">Large group villa</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>10 Bedrooms · 8 Bathrooms</li>
+                  <li>Large dining hall · Meeting space</li>
+                  <li>Wi‑Fi · Parking · Outdoor garden</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences" class="py-5">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-lg-6 mb-4">
+            <h2 class="brand">Cooking Classes</h2>
+            <p class="text-muted">
+              Learn to cook traditional local dishes with our hands-on cooking
+              classes. Perfect for small groups or families — we focus on fresh,
+              locally sourced ingredients and simple techniques.
+            </p>
+            <ul class="small text-muted">
+              <li><strong>Duration:</strong> 2.5 hours</li>
+              <li><strong>Group size:</strong> 2–10 people</li>
+              <li><strong>Price (sample):</strong> from 35 USD per person</li>
+              <li>
+                <strong>Included:</strong> Ingredients, apron, recipe card, meal
+                after class
+              </li>
+            </ul>
+            <div class="mt-3">
+              <a
+                href="https://wa.me/00000000000?text=I%20want%20to%20book%20a%20cooking%20class"
+                target="_blank"
+                class="btn btn-success me-2"
+                >Book on WhatsApp</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary"
+                >Call to Reserve</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <h2 class="brand">Tours</h2>
+            <p class="text-muted">
+              We offer curated half-day and full-day tours that introduce guests
+              to local culture, nature walks and markets.
+            </p>
+            <div class="list-group small">
+              <div class="list-group-item">
+                <h6 class="mb-1">Cultural Village Tour — 3 hours</h6>
+                <p class="mb-1 text-muted">
+                  Visit a nearby village, tea tasting, and traditional crafts
+                  demonstration.
+                </p>
+                <small>From 45 USD per person</small>
+              </div>
+              <div class="list-group-item">
+                <h6 class="mb-1">Nature & Waterfall Hike — Half day</h6>
+                <p class="mb-1 text-muted">
+                  Guided hike to a scenic waterfall, picnic lunch included.
+                </p>
+                <small>From 55 USD per person</small>
+              </div>
+              <div class="list-group-item">
+                <h6 class="mb-1">Market & Cooking Combo — Full day</h6>
+                <p class="mb-1 text-muted">
+                  Morning market visit with a local guide, followed by a cooking
+                  class using purchased ingredients.
+                </p>
+                <small>From 85 USD per person</small>
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="https://wa.me/00000000000?text=I%20want%20to%20book%20a%20tour"
+                target="_blank"
+                class="btn btn-success me-2"
+                >Book on WhatsApp</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary"
+                >Call to Reserve</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-5 bg-white">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="brand mb-0">Gallery</h2>
+          <p class="mb-0 small text-muted">
+            All villa and experience photos are shown here. Replace placeholders
+            with your images.
+          </p>
+        </div>
+
+        <div class="row g-3" id="gallery-grid">
+          <!-- Use real images: replace the src with your actual gallery photos -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=101"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 1"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=101"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=102"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 2"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=102"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=103"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 3"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=103"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=104"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 4"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=104"
+            />
+          </div>
+
+          <!-- Additional placeholders -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=105"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 5"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=105"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=106"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 6"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=106"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal for larger view -->
+      <div class="modal fade" id="galleryModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <button
+                type="button"
+                class="btn-close position-absolute m-3 end-0"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <img
+                src=""
+                id="galleryModalImg"
+                alt="Gallery large"
+                style="width: 100%; height: auto; display: block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="brand mb-0">Guest Reviews</h2>
+          <p class="mb-0 small text-muted">
+            Read what guests say about us — live Google reviews embed below
+            (placeholder).
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <!-- Static example reviews (good for SEO) -->
+            <div class="card p-3 mb-3">
+              <blockquote class="blockquote mb-0">
+                <p>
+                  "Beautiful villas, excellent hosts and a memorable cooking
+                  class — we will come back!"
+                </p>
+                <footer class="blockquote-footer">
+                  Sarah L.
+                  <cite title="Source Title"> — Stayed April 2025</cite>
+                </footer>
+              </blockquote>
+            </div>
+
+            <div class="card p-3 mb-3">
+              <blockquote class="blockquote mb-0">
+                <p>
+                  "Perfect for a family reunion. The Green Lodge was roomy and
+                  the staff were amazing."
+                </p>
+                <footer class="blockquote-footer">
+                  The Fernando Family
+                  <cite title="Source Title"> — Stayed January 2025</cite>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <!-- Google Maps embed used as a placeholder for reviews UI. Replace with official embeds if available. -->
+            <div class="ratio ratio-16x9">
+              <!-- Use the provided maps.app link for quick navigation; replace the src below with an official Google Maps embed link if you have one. -->
+              <iframe
+                src="https://www.google.com/maps?q=Green+Villa&output=embed"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / MAP -->
+    <section id="location" class="py-5 bg-white">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h2 class="brand">Location</h2>
+            <p class="text-muted">
+              We are easy to reach from major towns and within scenic
+              surroundings. Click the map to open directions in Google Maps.
+            </p>
+            <p class="small text-muted">
+              Quick link:
+              <a
+                href="https://maps.app.goo.gl/VcrgcvoKpKxZNUn18"
+                target="_blank"
+                >Open in Google Maps</a
+              >
+            </p>
+
+            <ul class="list-unstyled small text-muted">
+              <li>
+                <strong>Address:</strong> 123 Green Lane, Countryside (sample)
+              </li>
+              <li><strong>Phone:</strong> +1 (234) 567-890</li>
+              <li><strong>Email:</strong> hello@greenvilla.example</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <!-- Replace with official Google Maps embed if you have it; this is a general search embed as a placeholder. -->
+              <iframe
+                src="https://www.google.com/maps?q=Green+Villa&output=embed"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / RESERVE -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h2 class="brand">Contact & Reservations</h2>
+            <p class="text-muted">
+              To reserve a villa, book a cooking class or arrange a tour,
+              contact us by WhatsApp, phone or email. We typically respond
+              within a few hours.
+            </p>
+
+            <div class="mb-3">
+              <a
+                href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20make%20a%20reservation"
+                target="_blank"
+                class="btn btn-success me-2"
+                >WhatsApp Us</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary me-2"
+                >Call +1 (234) 567-890</a
+              >
+              <a
+                href="mailto:hello@greenvilla.example"
+                class="btn btn-outline-secondary"
+                >Email</a
+              >
+            </div>
+
+            <!-- Simple contact form (sends via mailto by default). Replace action with server endpoint or form service if desired. -->
+            <form id="contactForm" onsubmit="return submitContactForm(event);">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <button class="btn cta-btn" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <h6 class="mb-3">Connect with us</h6>
+            <p class="small text-muted">
+              Follow Green Villa on social media for updates and
+              behind-the-scenes.
+            </p>
+            <div class="d-flex gap-2 mb-4">
+              <a
+                class="social-icon"
+                href="https://youtube.com/"
+                target="_blank"
+                aria-label="YouTube"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23 7.00002C23 7.00002 23.25 5.5 22.25 4.75C21.25 3.99998 19.75 4 19 4C15.75 4 12 4 12 4H12C12 4 8.25 4 5 4C4.25 4 2.75 3.99998 1.75 4.75C0.75 5.5 1 7.00002 1 7.00002C1 7.00002 1 9.25 1 11.5V12.5C1 14.75 1 17 1 17C1 17 0.75 18.5 1.75 19.25C2.75 20 4.25 20 5 20C8.25 20 12 20 12 20C12 20 15.75 20 19 20C19.75 20 21.25 19.9999 22.25 19.25C23.25 18.5 23 17 23 17C23 17 23 14.75 23 12.5V11.5C23 9.25 23 7.00002 23 7.00002Z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5 3.657 9.128 8.438 9.878v-6.99H7.898v-2.887h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.887h-2.33v6.99C18.343 21.128 22 17 22 12z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zM12 7.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm5.75-2a1.25 1.25 0 11-1.25 1.25A1.25 1.25 0 0117.75 5.5z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://tiktok.com/"
+                target="_blank"
+                aria-label="TikTok"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 3v12.5a3.5 3.5 0 103.5-3.5V6h3.5A6.5 6.5 0 0120 12.5V14a6.5 6.5 0 11-6.5-6.5H9z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://www.threads.net/"
+                target="_blank"
+                aria-label="Threads"
+                ><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+            </div>
+
+            <h6 class="mb-2">Subscribe for updates</h6>
+            <form
+              class="d-flex"
+              onsubmit="event.preventDefault();alert('Subscribed (placeholder)');"
+            >
+              <input
+                class="form-control me-2"
+                placeholder="Your email"
+                aria-label="Email"
+              />
+              <button class="btn cta-btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 mt-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <img src="/favicon.ico" alt="logo" width="40" height="40" />
+              <div>
+                <div class="brand">Green Villa</div>
+                <small class="text-muted"
+                  >© <span id="year"></span> Green Villa. All rights
+                  reserved.</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <small class="text-muted"
+              >123 Green Lane, Countryside · Phone: +1 (234) 567-890 ·
+              hello@greenvilla.example</small
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <!-- jQuery (requested), Popper & Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      // Update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Gallery modal image swap
+      (function () {
+        var galleryModal = document.getElementById("galleryModal");
+        galleryModal.addEventListener("show.bs.modal", function (event) {
+          var img = event.relatedTarget; // the clicked image
+          var src = img.getAttribute("data-src") || img.getAttribute("src");
+          document.getElementById("galleryModalImg").setAttribute("src", src);
+        });
+      })();
+
+      // Contact form submission handler (placeholder)
+      function submitContactForm(e) {
+        e.preventDefault();
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var message = document.getElementById("message").value.trim();
+        if (!name || !email || !message) {
+          alert("Please complete all fields.");
+          return false;
+        }
+        // Default behaviour: open mail client with prefilled subject/body (replace with server endpoint if available)
+        var subject = encodeURIComponent(
+          "Green Villa reservation / inquiry from " + name
+        );
+        var body = encodeURIComponent(
+          "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
+        );
+        window.location.href =
+          "mailto:hello@greenvilla.example?subject=" +
+          subject +
+          "&body=" +
+          body;
+        return false;
+      }
+
+      // Small UX: smooth scrolling for internal anchors
+      $(function () {
+        $('a[href^="#"]').on("click", function (e) {
+          var target = this.hash;
+          if (target.length) {
+            e.preventDefault();
+            var $target = $(target);
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: $target.offset().top - 70,
+                },
+                500,
+                "swing"
+              );
+          }
+        });
+      });
+
+      // Accessibility: keyboard close for gallery modal image
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          var modal = bootstrap.Modal.getInstance(
+            document.getElementById("galleryModal")
+          );
+          if (modal) modal.hide();
+        }
+      });
+    </script>
+  </body>
+</html>

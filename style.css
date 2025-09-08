@@ -1,0 +1,704 @@
+/* <style id="custom-styles"> */
+/* ===========================================
+           CUSTOM CSS FOR GREEN VILLA WEBSITE
+           Professional Developer Implementation
+           =========================================== */
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-green: #2d5a27;
+  --secondary-green: #4a7c59;
+  --light-green: #7fb069;
+  --accent-green: #a4c3b2;
+  --cream: #f6f4e6;
+  --white: #ffffff;
+  --dark-text: #2c3e50;
+  --light-text: #666666;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================================
+           NAVIGATION STYLES
+           =========================================== */
+
+.navbar {
+  background-color: var(--white) !important;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary-green) !important;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--dark-text) !important;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-green) !important;
+}
+
+/* Sticky navbar effect */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* ===========================================
+           HERO SECTION STYLES
+           =========================================== */
+
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--secondary-green) 100%
+  );
+  color: var(--white);
+  padding: 8rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero background pattern */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+  opacity: 0.1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background-color: var(--accent-green);
+  color: var(--primary-green);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  color: var(--primary-green);
+}
+
+/* ===========================================
+           SECTION STYLES
+           =========================================== */
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Alternating section backgrounds */
+.bg-light-green {
+  background-color: var(--cream);
+}
+
+/* ===========================================
+           VILLA CARD STYLES
+           =========================================== */
+
+.villa-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  height: 100%;
+}
+
+.villa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.villa-image {
+  height: 250px;
+  background: linear-gradient(45deg, var(--light-green), var(--accent-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Villa image styling - optimized for large images */
+.villa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.villa-card:hover .villa-img {
+  transform: scale(1.05);
+}
+
+/* Hide the SVG overlay when image is present */
+.villa-image:has(.villa-img)::before {
+  display: none;
+}
+
+/* Fallback SVG overlay for missing images only */
+.villa-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Image loading optimization for large files */
+.villa-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Responsive image sizing for different screen sizes */
+@media (max-width: 768px) {
+  .villa-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .villa-image {
+    height: 180px;
+  }
+}
+
+.villa-content {
+  padding: 2rem;
+}
+
+.villa-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.villa-capacity {
+  color: var(--secondary-green);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.facility-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.facility-list li {
+  padding: 0.3rem 0;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+}
+
+.facility-list li i {
+  color: var(--light-green);
+  margin-right: 0.5rem;
+  width: 16px;
+}
+
+.book-btn {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.book-btn:hover {
+  background-color: var(--secondary-green);
+  transform: translateY(-2px);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ===========================================
+           SERVICES STYLES
+           =========================================== */
+
+.service-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--light-green);
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+/* ===========================================
+           GALLERY STYLES
+           =========================================== */
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  height: 250px;
+  background: linear-gradient(45deg, var(--accent-green), var(--light-green));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 90, 39, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-text {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===========================================
+           BOOKING PLATFORMS STYLES
+           =========================================== */
+
+.booking-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.platform-btn {
+  background: var(--white);
+  border: 2px solid var(--accent-green);
+  color: var(--primary-green);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.platform-btn:hover {
+  background: var(--primary-green);
+  color: var(--white);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.platform-btn i {
+  font-size: 1.2rem;
+}
+
+/* ===========================================
+           SPECIAL OFFERS STYLES
+           =========================================== */
+
+.offer-card {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green),
+    var(--secondary-green)
+  );
+  color: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ffffff" fill-opacity="0.1"><path d="M20 20c0-11.046-8.954-20-20-20v20h20z"/></g></svg>');
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.offer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.offer-badge {
+  background: var(--accent-green);
+  color: var(--primary-green);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+           CONTACT & MAPS STYLES
+           =========================================== */
+
+.contact-info {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: var(--primary-green);
+  font-size: 1.2rem;
+}
+
+.contact-text h5 {
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.contact-text p {
+  color: var(--light-text);
+  margin: 0;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 400px;
+}
+
+.map-placeholder {
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-green), var(--light-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ===========================================
+           FOOTER STYLES
+           =========================================== */
+
+.footer {
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 3rem 0 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--accent-green);
+  color: var(--primary-green);
+  transform: translateY(-3px);
+}
+
+.footer-text {
+  text-align: center;
+  opacity: 0.8;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===========================================
+           RESPONSIVE DESIGN
+           =========================================== */
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .villa-content {
+    padding: 1.5rem;
+  }
+
+  .booking-platforms {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .platform-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 6rem 0 3rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .villa-content {
+    padding: 1rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+  }
+
+  .offer-card {
+    padding: 1.5rem;
+  }
+
+  .contact-info {
+    padding: 1.5rem;
+  }
+}
+
+/* ===========================================
+           UTILITY CLASSES
+           =========================================== */
+
+.text-green {
+  color: var(--primary-green) !important;
+}
+
+.bg-green {
+  background-color: var(--primary-green) !important;
+}
+
+.border-green {
+  border-color: var(--accent-green) !important;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Print styles */
+@media print {
+  .hero-section,
+  .navbar,
+  .footer {
+    display: none !important;
+  }
+
+  .section {
+    page-break-inside: avoid;
+    padding: 1rem 0;
+  }
+}
+/* </style> */
