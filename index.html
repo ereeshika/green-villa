@@ -663,11 +663,27 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6">
-            <h2 class="brand">Location</h2>
+            <h2 class="brand">Contact & Location</h2>
             <p class="text-muted">
               We are easy to reach from major towns and within scenic
               surroundings. Click the map to open directions in Google Maps.
             </p>
+            <div class="mb-3">
+              <a
+                href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20make%20a%20reservation"
+                target="_blank"
+                class="btn btn-success me-2"
+                >WhatsApp Us</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary me-2"
+                >Call +1 (234) 567-890</a
+              >
+              <a
+                href="mailto:hello@greenvilla.example"
+                class="btn btn-outline-secondary"
+                >Email</a
+              >
+            </div>
             <p class="small text-muted">
               Quick link:
               <a
@@ -684,6 +700,50 @@
               <li><strong>Phone:</strong> +1 (234) 567-890</li>
               <li><strong>Email:</strong> hello@greenvilla.example</li>
             </ul>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                class="social-link"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="social-link"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="social-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                class="social-link"
+                aria-label="TikTok"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a
+                href="https://www.threads.net"
+                target="_blank"
+                class="social-link"
+                aria-label="Threads"
+              >
+                <i class="fab fa-threads"></i>
+              </a>
+            </div>
           </div>
           <div class="col-lg-6">
             <div class="ratio ratio-16x9">
@@ -701,161 +761,6 @@
     </section>
 
     <!-- CONTACT / RESERVE -->
-    <section id="contact" class="py-5">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <h2 class="brand">Contact & Reservations</h2>
-            <p class="text-muted">
-              To reserve a villa, book a cooking class or arrange a tour,
-              contact us by WhatsApp, phone or email. We typically respond
-              within a few hours.
-            </p>
-
-            <div class="mb-3">
-              <a
-                href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20make%20a%20reservation"
-                target="_blank"
-                class="btn btn-success me-2"
-                >WhatsApp Us</a
-              >
-              <a href="tel:+1234567890" class="btn btn-outline-secondary me-2"
-                >Call +1 (234) 567-890</a
-              >
-              <a
-                href="mailto:hello@greenvilla.example"
-                class="btn btn-outline-secondary"
-                >Email</a
-              >
-            </div>
-
-            <!-- Simple contact form (sends via mailto by default). Replace action with server endpoint or form service if desired. -->
-            <form id="contactForm" onsubmit="return submitContactForm(event);">
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" class="form-control" required />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" required />
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  class="form-control"
-                  required
-                ></textarea>
-              </div>
-              <button class="btn cta-btn" type="submit">Send Message</button>
-            </form>
-          </div>
-
-          <div class="col-lg-6">
-            <h6 class="mb-3">Connect with us</h6>
-            <p class="small text-muted">
-              Follow Green Villa on social media for updates and
-              behind-the-scenes.
-            </p>
-            <div class="d-flex gap-2 mb-4">
-              <a
-                class="social-icon"
-                href="https://youtube.com/"
-                target="_blank"
-                aria-label="YouTube"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23 7.00002C23 7.00002 23.25 5.5 22.25 4.75C21.25 3.99998 19.75 4 19 4C15.75 4 12 4 12 4H12C12 4 8.25 4 5 4C4.25 4 2.75 3.99998 1.75 4.75C0.75 5.5 1 7.00002 1 7.00002C1 7.00002 1 9.25 1 11.5V12.5C1 14.75 1 17 1 17C1 17 0.75 18.5 1.75 19.25C2.75 20 4.25 20 5 20C8.25 20 12 20 12 20C12 20 15.75 20 19 20C19.75 20 21.25 19.9999 22.25 19.25C23.25 18.5 23 17 23 17C23 17 23 14.75 23 12.5V11.5C23 9.25 23 7.00002 23 7.00002Z"
-                    fill="currentColor"
-                  /></svg
-              ></a>
-              <a
-                class="social-icon"
-                href="https://facebook.com/"
-                target="_blank"
-                aria-label="Facebook"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5 3.657 9.128 8.438 9.878v-6.99H7.898v-2.887h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.887h-2.33v6.99C18.343 21.128 22 17 22 12z"
-                    fill="currentColor"
-                  /></svg
-              ></a>
-              <a
-                class="social-icon"
-                href="https://instagram.com/"
-                target="_blank"
-                aria-label="Instagram"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zM12 7.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm5.75-2a1.25 1.25 0 11-1.25 1.25A1.25 1.25 0 0117.75 5.5z"
-                    fill="currentColor"
-                  /></svg
-              ></a>
-              <a
-                class="social-icon"
-                href="https://tiktok.com/"
-                target="_blank"
-                aria-label="TikTok"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 3v12.5a3.5 3.5 0 103.5-3.5V6h3.5A6.5 6.5 0 0120 12.5V14a6.5 6.5 0 11-6.5-6.5H9z"
-                    fill="currentColor"
-                  /></svg
-              ></a>
-              <a
-                class="social-icon"
-                href="https://www.threads.net/"
-                target="_blank"
-                aria-label="Threads"
-                ><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2a10 10 0 100 20 10 10 0 000-20z"
-                    fill="currentColor"
-                  /></svg
-              ></a>
-            </div>
-
-            <h6 class="mb-2">Subscribe for updates</h6>
-            <form
-              class="d-flex"
-              onsubmit="event.preventDefault();alert('Subscribed (placeholder)');"
-            >
-              <input
-                class="form-control me-2"
-                placeholder="Your email"
-                aria-label="Email"
-              />
-              <button class="btn cta-btn" type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FOOTER -->
     <footer class="py-4 mt-4">
