@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta tags for SEO optimization -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    Green Villa - Single Page Website
+    Built with Bootstrap 5.3, jQuery (included at user request), and Vanilla JS.
+
+    Instructions:
+    - Replace placeholder links and images with real assets.
+    - Replace gallery images in the <div id="gallery"> with your actual images.
+    - Replace reservation sample links with the real Airbnb / Agoda / Booking.com URLs for each villa.
+    - Replace the Google Maps iframe src with the official embed (if you have a place-specific embed link).
+
+    Author: Generated for the user (Green Villa)
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Green Villa — Villas, Cooking Classes & Tours</title>
     <meta
       name="description"
-      content="Green Villa - Premium accommodation in Nuwara Eliya with 4 unique villas, cooking classes, and tours. Book through Booking.com, Airbnb, or Agoda."
+      content="Green Villa — boutique villas offering accommodation, local cooking classes and curated tours. Book via Airbnb, Agoda or Booking.com."
     />
     <meta
       name="keywords"
-      content="Green Villa, Nuwara Eliya hotel, Sri Lanka accommodation, villa rental, cooking classes, tours"
+      content="Green Villa, villas, Sri Lanka, cooking classes, tours, accommodation"
     />
-    <meta name="author" content="Green Villa" />
-    <meta
-      property="og:title"
-      content="Green Villa - Premium Villas in Nuwara Eliya"
-    />
-    <meta
-      property="og:description"
-      content="Experience luxury accommodation at Green Villa with 4 unique villas accommodating 12-23 adults. Enjoy cooking classes, tours, and exceptional hospitality."
-    />
-    <meta property="og:type" content="website" />
 
-    <title>Green Villa - Premium Villas in Nuwara Eliya | Book Your Stay</title>
-
-    <!-- Bootstrap 5.3.0 CSS -->
+    <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome for icons -->
+    <!-- Bootstrap CSS -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
     />
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <!-- <nav class="navbar navbar-expand-lg navbar-light sticky-top"></nav> -->
       <div class="container">
-        <a class="navbar-brand" href="#home">
-          <i class="fas fa-leaf"></i> Green Villa
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <!-- Site logo placeholder - replace with your actual logo image -->
+          <img
+            src="/favicon.ico"
+            alt="Green Villa logo"
+            width="42"
+            height="42"
+            class="rounded"
+          />
+          <span class="brand fs-4">Green Villa</span>
         </a>
-
-        <!-- Mobile menu button -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-bs-target="#navMenu"
+          title="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Navigation menu -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
@@ -78,1559 +77,886 @@
               <a class="nav-link" href="#villas">Villas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
+              <a class="nav-link" href="#experiences">Experiences</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#reviews">Reviews</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#booking">Book Now</a>
+              <a class="nav-link" href="#location">Location</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-sm ms-2 cta-btn" href="#contact"
+                >Reserve</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-10">
-            <div class="hero-content fade-in">
-              <h1 class="hero-title">Welcome to Green Villa</h1>
-              <p class="hero-subtitle">
-                Experience the perfect blend of luxury and nature in beautiful
-                Nuwara Eliya. Choose from our 4 unique villas accommodating
-                12-23 adults with world-class amenities.
-              </p>
-              <a href="#booking" class="cta-button">
-                <i class="fas fa-calendar-check"></i> Book Your Stay Now
-              </a>
-            </div>
+    <!-- HERO -->
+    <header class="hero position-relative">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="res/img/green-villa-thumb.png"
+              class="d-block w-100"
+              alt="Green Villa"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="res/img/green-meadow-thumb.png"
+              class="d-block w-100"
+              alt="Green Mist"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="res/img/green-villa-thumb.png"
+              class="d-block w-100"
+              alt="Tours"
+            />
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+      <!-- Dark overlay for readability -->
+      <div
+        class="overlay position-absolute top-0 start-0 w-100 h-100"
+        style="background: rgba(27, 94, 32, 0.6)"
+      ></div>
+
+      <!-- Hero content -->
+      <div
+        class="container position-absolute top-50 start-50 translate-middle text-white"
+      >
+        <p class="mb-2 text-uppercase small text-white">
+          Boutique villas & authentic experiences
+        </p>
+        <h1 class="display-4 fw-bold">Green Villa — Your Peaceful Retreat</h1>
+        <p class="lead">
+          Escape to a serene green hideaway. Four spacious villas, personalised
+          cooking classes and curated local tours make Green Villa the perfect
+          base for family gatherings and small group retreats.
+        </p>
+        <div class="mt-3">
+          <a href="#villas" class="btn btn-success btn-lg me-2">View Villas</a>
+          <a href="#experiences" class="btn btn-outline-light btn-lg"
+            >Experiences</a
+          >
+        </div>
+        <!-- Quick contact actions -->
+        <div class="mt-4">
+          <a
+            class="me-3"
+            href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20book"
+            target="_blank"
+            rel="noopener no-referrer-when-downgrade"
+            >WhatsApp</a
+          >
+          <a href="tel:+1234567890">Call +1 (234) 567-890</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="section-title fade-in">About Green Villa</h2>
-            <p class="section-subtitle fade-in">
-              Nestled in the heart of Nuwara Eliya, Green Villa offers an
-              exceptional hospitality experience combining comfort, luxury, and
-              authentic Sri Lankan charm.
+        <div class="row gy-4 align-items-center">
+          <div class="col-md-6">
+            <h2 class="brand">About Green Villa</h2>
+            <p class="text-muted">
+              Set among verdant gardens and quiet lanes, Green Villa offers four
+              independent villas each designed for comfort and privacy. Our team
+              curates local experiences — from hands-on cooking classes to
+              immersive cultural and nature tours.
             </p>
+            <ul>
+              <li>Personalised hospitality and daily housekeeping.</li>
+              <li>Wi-Fi, private kitchens, and flexible check-in options.</li>
+              <li>Sustainability-minded operations and local sourcing.</li>
+            </ul>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="fade-in">
-              <h3 class="text-green mb-3">Our Story</h3>
-              <p>
-                Green Villa has been welcoming guests from around the world with
-                warm Sri Lankan hospitality. Our commitment to excellence and
-                attention to detail ensures every guest experiences the best of
-                what Nuwara Eliya has to offer.
-              </p>
-              <p>
-                With four distinct villas, we cater to groups of all sizes, from
-                intimate gatherings to large family reunions and corporate
-                retreats. Each villa is thoughtfully designed with modern
-                amenities while preserving the natural beauty of our
-                surroundings.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="fade-in">
-              <h3 class="text-green mb-3">Why Choose Us?</h3>
-              <ul class="facility-list">
-                <li>
-                  <i class="fas fa-check-circle"></i> Prime location in Nuwara
-                  Eliya
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Four unique villas with
-                  different capacities
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Modern amenities and
-                  traditional charm
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Local cooking classes and
-                  guided tours
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Exceptional customer
-                  service
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Easy booking through
-                  multiple platforms
-                </li>
-              </ul>
+          <div class="col-md-6">
+            <!-- <div class="card villa-card p-3">
+              <div class="card-body">
+                <h5 class="card-title">Quick Facts</h5>
+                <p class="card-text mb-1">
+                  <strong>Languages:</strong> English
+                </p>
+                <p class="card-text mb-1"><strong>Currency:</strong> USD</p>
+                <p class="card-text mb-0">
+                  <strong>Check-in:</strong> 14:00 ·
+                  <strong>Check-out:</strong> 11:00
+                </p>
+              </div>
+            </div> -->
+            <div class="card p-3 villa-card shadow-sm">
+              <div class="p-4 text-center">
+                <div class="logo-mark fs-3 mb-2">Our Villa Range</div>
+                <p class="small text-muted">
+                  Four villas · Cooking classes · Guided tours
+                </p>
+                <div class="d-flex gap-2 justify-content-center mt-3">
+                  <span class="villa-badge">Green Villa</span>
+                  <span class="villa-badge">Green Mist</span>
+                  <span class="villa-badge">Green Meadow</span>
+                  <span class="villa-badge">Green Lodge</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Villas Section -->
-    <section id="villas" class="section bg-light-green">
+    <!-- VILLAS -->
+    <section id="villas" class="py-5 bg-white">
       <div class="container">
-        <h2 class="section-title fade-in">Our Premium Villas</h2>
-        <p class="section-subtitle fade-in">
-          Choose from our four distinctive villas, each offering unique features
-          and capacities to suit your perfect getaway.
-        </p>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="brand mb-0">Our Villas</h2>
+          <p class="mb-0 text-muted">
+            Select a villa to view facilities and book via your favourite OTA
+          </p>
+        </div>
 
-        <!-- Villa Range Row:1 -->
-        <div class="row mb-5">
-          <!-- Villa 1: Green Villa -->
-          <div class="col-lg-6 mb-4">
-            <div class="villa-card fade-in h-100 d-flex flex-column">
-              <div class="villa-image">
-                <img
-                  src="res/img/green-villa-thumb.png"
-                  alt="..."
-                  class="villa-img"
-                />
+        <div class="row g-4">
+          <!-- Villa Card Template - no photos inside cards as requested -->
+
+          <!-- GREEN VILLA (12 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <!-- Simple typographic logo-mark per villa -->
+                <div>
+                  <div class="logo-mark">Green Villa</div>
+                  <small class="text-muted">For up to 12 adults</small>
+                </div>
+                <div class="text-end">
+                  <span class="badge bg-success">Popular</span>
+                </div>
               </div>
-              <div class="villa-content flex-grow-1 d-flex flex-column">
-                <h3 class="villa-title">Green Villa</h3>
-                <p class="villa-capacity">
-                  <i class="fas fa-users"></i> Accommodation Facilities up to 12
-                  Adults with 4 Rooms and 2 Bathrooms.
-                </p>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5 class="text-green">Room Configuration</h5>
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-bed"></i> Room 1: 1 Double Bed + 1
-                        Single Bed (3 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 2: 1 Double Bed + 1
-                        Single Bed (3 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 3: 1 Double Bed + 1
-                        Single Bed (3 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 4: 1 Double Bed + 1
-                        Single Bed (3 Adults)
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <h5 class="text-green">Amenities</h5>
-                  <div class="col-md-6">
-                    <ul class="facility-list">
-                      <li><i class="fas fa-utensils"></i> Kitchen</li>
-                      <li><i class="fas fa-wifi"></i> Free Wi-Fi (10GB/day)</li>
-                      <li>
-                        <i class="fas fa-music"></i> JBL Speaker (on request)
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="facility-list">
-                      <li><i class="fas fa-tv"></i> Lounge with TV</li>
-                      <li><i class="fas fa-car"></i>Secure Parking</li>
-                    </ul>
-                  </div>
-                </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>5 Bedrooms · 4 Bathrooms</li>
+                  <li>Full kitchen · Living area</li>
+                  <li>Wi‑Fi · A/C · Free parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <!-- Reservation buttons to OTAs (sample links) -->
                 <a
-                  href="https://www.airbnb.co.uk/rooms/1225739069810122155?viralityEntryPoint=1&s=76&source_impression_id=p3_1756999352_P3eeGHFwZb1t4njd"
-                  class="book-btn mt-3"
-                  >Book Green Villa</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Villa 1: Green Villa End -->
-          <!-- Villa 2: Green Mist -->
-          <div class="col-lg-6 mb-4">
-            <div class="villa-card fade-in">
-              <div class="villa-image">
-                <img
-                  src="res/img/green-mist-thumb.png"
-                  alt="..."
-                  class="villa-img"
-                />
-              </div>
-              <div class="villa-content">
-                <h3 class="villa-title">Green Mist</h3>
-                <p class="villa-capacity">
-                  <i class="fas fa-users"></i> Accommodation Facilities up to 14
-                  Adults with 3 Comfortable Rooms, including Attached Bathrooms
-                  and Hot Water Shower.
-                </p>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5 class="text-green">Room Configuration</h5>
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-bed"></i> Room 1: King Bed + Double Bed
-                        (5 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 2: King Bed + Double Bed
-                        (5 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 3: King Bed + Single Bed
-                        (4 Adults)
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <h5 class="text-green">Amenities</h5>
-                  <div class="col-md-6">
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-utensils"></i> Kitchen Facilities
-                      </li>
-                      <li><i class="fas fa-wifi"></i> Free Wi-Fi (10GB/day)</li>
-                      <li>
-                        <i class="fas fa-music"></i> JBL Speaker (on request)
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="facility-list">
-                      <li><i class="fas fa-tv"></i> Lounge with TV</li>
-                      <li><i class="fas fa-car"></i> Secure Parking</li>
-                    </ul>
-                  </div>
-                </div>
-                <a
-                  href="https://www.airbnb.co.uk/rooms/1421418476014808165?viralityEntryPoint=1&s=76&source_impression_id=p3_1756999082_P3615iOiAJdSIbpI&translate_ugc=false"
-                  class="book-btn mt-3"
-                  >Book Green Mist</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Villa 2: Green Mist End -->
-        </div>
-
-        <div class="row mb-5">
-          <!-- Villa 3: Green Meadow -->
-          <div class="col-lg-6 mb-4">
-            <div class="villa-card fade-in">
-              <div class="villa-image">
-                <img
-                  src="res/img/green-meadow-thumb.png"
-                  alt="..."
-                  class="villa-img"
-                />
-              </div>
-              <div class="villa-content">
-                <h3 class="villa-title">Green Meadow</h3>
-                <p class="villa-capacity">
-                  <i class="fas fa-users"></i> Accommodates up to 15 Adults with
-                  5 Comfortable Rooms
-                </p>
-                <div class="row">
-                  <div class="col-md-6">
-                    <h5 class="text-green">Accommodation</h5>
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-bath"></i> 3 Rooms with Attached
-                        Bathrooms
-                      </li>
-                      <li>
-                        <i class="fas fa-bath"></i> 2 Rooms with Common
-                        Bathrooms
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <h5 class="text-green">Amenities</h5>
-                    <ul class="facility-list">
-                      <li><i class="fas fa-car"></i> Secure Parking</li>
-                      <li><i class="fas fa-wifi"></i> Free Wi-Fi (10GB/day)</li>
-                      <li>
-                        <i class="fas fa-utensils"></i> Kitchen Facilities
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- <a href="#booking" class="book-btn mt-3">Book Green Meadow</a> -->
-              </div>
-            </div>
-          </div>
-          <!-- Villa 3: Green Meadow End -->
-          <!-- Villa 4: Green Lodge -->
-          <div class="col-lg-6 mb-4 order-lg-2">
-            <div class="villa-card fade-in">
-              <div class="villa-image">
-                <div class="placeholder-text">Green Lodge Image</div>
-              </div>
-              <div class="villa-content">
-                <h3 class="villa-title">Green Lodge</h3>
-                <p class="villa-capacity">
-                  <i class="fas fa-users"></i> Accommodates up to 24 Adults
-                </p>
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5 class="text-green">Room Configuration</h5>
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-bed"></i> Rooms 1-4: 2 Double Beds each
-                        (4 Adults each)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 5: 2 Double + 1 Single
-                        Bed (5 Adults)
-                      </li>
-                      <li>
-                        <i class="fas fa-bed"></i> Room 6: 1 Triple Bed (3
-                        Adults)
-                      </li>
-                    </ul>
-                    <h5 class="text-green mt-3">Premium Features</h5>
-                    <ul class="facility-list">
-                      <li>
-                        <i class="fas fa-bath"></i> 2 Attached + 1 Common
-                        Bathroom (Hot Water)
-                      </li>
-                      <li>
-                        <i class="fas fa-utensils"></i> Kitchen Facility (Rs.
-                        1000 fee)
-                      </li>
-                      <li><i class="fas fa-tv"></i> Lounge with TV</li>
-                      <li><i class="fas fa-wifi"></i> Free Wi-Fi (10GB/day)</li>
-                      <li><i class="fas fa-fire"></i> BBQ Grill - FREE</li>
-                      <li>
-                        <i class="fas fa-fire-flame-curved"></i> Outdoor
-                        Fireplace
-                      </li>
-                      <li><i class="fas fa-car"></i> Parking for 4 Cars</li>
-                      <li>
-                        <i class="fas fa-music"></i> JBL Speaker (Rs. 2000 fee)
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <a href="#booking" class="book-btn mt-3">Book Green Lodge</a>
-              </div>
-            </div>
-          </div>
-          <!-- Villa 4: Green Lodge End -->
-          <!-- <div class="col-lg-6 order-lg-1">
-            <div class="villa-card fade-in">
-              <div class="villa-content">
-                <h4 class="text-green">Ultimate Group Experience</h4>
-                <p>
-                  Our largest and most feature-rich villa, Green Lodge is
-                  perfect for large groups, corporate retreats, or special
-                  celebrations. With 6 bedrooms accommodating up to 24 adults,
-                  it offers unmatched space and amenities.
-                </p>
-                <div class="row mt-3">
-                  <div class="col-12">
-                    <h6 class="text-green">Special Features:</h6>
-                    <div class="row">
-                      <div class="col-6">
-                        <ul class="facility-list small">
-                          <li><i class="fas fa-fire"></i> FREE BBQ Grill</li>
-                          <li>
-                            <i class="fas fa-fire-flame-curved"></i> Outdoor
-                            Fireplace
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-6">
-                        <ul class="facility-list small">
-                          <li><i class="fas fa-car"></i> 4-Car Parking</li>
-                          <li>
-                            <i class="fas fa-users"></i> Large Lounge Area
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="alert alert-info mt-3">
-                  <small
-                    ><i class="fas fa-info-circle"></i> Kitchen facility
-                    available for Rs. 1000. JBL Speaker rental Rs. 2000.</small
-                  >
-                </div>
-                <div class="mt-3">
-                  <span class="badge bg-green me-2">Largest Villa</span>
-                  <span class="badge bg-green me-2">BBQ & Fireplace</span>
-                  <span class="badge bg-green">Group Events</span>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-      <div class="container">
-        <h2 class="section-title fade-in">Our Services</h2>
-        <p class="section-subtitle fade-in">
-          Enhance your stay with our authentic Sri Lankan experiences designed
-          to create lasting memories.
-        </p>
-
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-utensils"></i>
-              </div>
-              <h3 class="service-title">Local Cooking Classes</h3>
-              <p class="service-description">
-                Immerse yourself in the rich culinary traditions of Sri Lanka
-                with our hands-on cooking classes. Learn to prepare authentic
-                local dishes using traditional techniques and fresh, local
-                ingredients.
-              </p>
-              <ul class="facility-list mt-3">
-                <li>
-                  <i class="fas fa-check"></i> Traditional Sri Lankan recipes
-                </li>
-                <li>
-                  <i class="fas fa-check"></i> Professional local chef
-                  instruction
-                </li>
-                <li>
-                  <i class="fas fa-check"></i> Fresh, locally sourced
-                  ingredients
-                </li>
-                <li><i class="fas fa-check"></i> Take-home recipe booklet</li>
-                <li><i class="fas fa-check"></i> Small group sessions</li>
-              </ul>
-              <div class="mt-3">
-                <span class="badge bg-green me-2">Authentic Experience</span>
-                <span class="badge bg-green">Cultural Immersion</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-mountain"></i>
-              </div>
-              <h3 class="service-title">Guided Tours</h3>
-              <p class="service-description">
-                Explore the breathtaking beauty of Nuwara Eliya and surrounding
-                areas with our carefully curated tour packages. From tea
-                plantations to waterfalls, discover the best of hill country.
-              </p>
-              <ul class="facility-list mt-3">
-                <li><i class="fas fa-check"></i> Professional local guides</li>
-                <li><i class="fas fa-check"></i> Tea plantation visits</li>
-                <li><i class="fas fa-check"></i> Scenic waterfall tours</li>
-                <li>
-                  <i class="fas fa-check"></i> Historical site exploration
-                </li>
-                <li><i class="fas fa-check"></i> Photography opportunities</li>
-              </ul>
-              <div class="mt-3">
-                <span class="badge bg-green me-2">Local Expertise</span>
-                <span class="badge bg-green">Nature & Culture</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-4">
-          <div class="col-lg-8 text-center">
-            <div class="fade-in">
-              <h4 class="text-green mb-3">Ready to Enhance Your Experience?</h4>
-              <p>
-                Contact us to learn more about our services and to customize
-                your perfect Sri Lankan adventure. Our team is ready to help you
-                create unforgettable memories.
-              </p>
-              <a href="#contact" class="cta-button">
-                <i class="fas fa-phone"></i> Contact Us for Services
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="section bg-light-green">
-      <div class="container">
-        <h2 class="section-title fade-in">Photo Gallery</h2>
-        <p class="section-subtitle fade-in">
-          Take a visual journey through our beautiful villas and the stunning
-          surroundings of Nuwara Eliya.
-        </p>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Villa Exteriors</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Comfortable Interiors</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Modern Kitchens</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Scenic Views</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Common Areas</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="gallery-item fade-in">
-              <div class="gallery-overlay">
-                <div class="gallery-text">Garden & Grounds</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Special Offers Section -->
-    <section id="offers" class="section">
-      <div class="container">
-        <h2 class="section-title fade-in">Special Offers</h2>
-        <p class="section-subtitle fade-in">
-          Take advantage of our seasonal promotions and special packages for an
-          even better value stay.
-        </p>
-
-        <div class="row">
-          <div class="col-lg-4 mb-4">
-            <div class="offer-card fade-in">
-              <div class="offer-content">
-                <div class="offer-badge">Early Bird Special</div>
-                <h4>Book 30 Days Ahead</h4>
-                <p>
-                  Save 15% on your stay when you book 30 days in advance.
-                  Perfect for planning your perfect getaway!
-                </p>
-                <div class="mt-3">
-                  <strong>15% OFF</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mb-4">
-            <div class="offer-card fade-in">
-              <div class="offer-content">
-                <div class="offer-badge">Extended Stay</div>
-                <h4>Stay 7+ Nights</h4>
-                <p>
-                  Enjoy a 20% discount on extended stays of 7 nights or more.
-                  Perfect for long vacations or retreats!
-                </p>
-                <div class="mt-3">
-                  <strong>20% OFF</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mb-4">
-            <div class="offer-card fade-in">
-              <div class="offer-content">
-                <div class="offer-badge">Group Booking</div>
-                <h4>Multiple Villa Booking</h4>
-                <p>
-                  Book 2 or more villas simultaneously and receive a 10%
-                  discount on your total booking!
-                </p>
-                <div class="mt-3">
-                  <strong>10% OFF</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-4">
-          <div class="col-lg-8 text-center">
-            <div class="fade-in">
-              <p class="text-muted">
-                <em
-                  >Terms and conditions apply. Offers cannot be combined.
-                  Contact us for more details about our current promotions.</em
-                >
-              </p>
-              <a href="#booking" class="cta-button">
-                <i class="fas fa-tag"></i> Book with Offers
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="section bg-light-green">
-      <div class="container">
-        <h2 class="section-title fade-in">What Our Guests Say</h2>
-        <p class="section-subtitle fade-in">
-          Read reviews from our satisfied guests who have experienced the Green
-          Villa difference.
-        </p>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="embed-responsive embed-responsive-16by9 fade-in">
-              <!-- Google Reviews Embed Placeholder -->
-              <div class="map-placeholder">
-                <div class="text-center">
-                  <i
-                    class="fas fa-star"
-                    style="font-size: 3rem; color: #ffc107; margin-bottom: 1rem"
-                  ></i>
-                  <h4>Google Reviews</h4>
-                  <p>
-                    See what our guests are saying about their Green Villa
-                    experience
-                  </p>
-                  <a
-                    href="https://www.google.com/search?q=green+villa+nuwara+eliya+reviews"
-                    target="_blank"
-                    class="btn btn-light"
-                  >
-                    <i class="fab fa-google"></i> View All Reviews
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Booking Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title fade-in">Contact & Location</h2>
-        <p class="section-subtitle fade-in">
-          Find us in the heart of Nuwara Eliya and get in touch for reservations
-          or inquiries.
-        </p>
-
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="contact-info fade-in">
-              <h4 class="text-green mb-4">Get in Touch</h4>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-text">
-                  <h5>Location</h5>
-                  <p>Nuwara Eliya, Central Province, Sri Lanka</p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="contact-text">
-                  <h5>WhatsApp</h5>
-                  <p>+94 77 123 4567</p>
-                  <a
-                    href="https://wa.me/94771234567?text=Hello%20Green%20Villa%2C%20I%27d%20like%20to%20make%20a%20reservation"
-                    target="_blank"
-                    class="btn btn-success btn-sm mt-2"
-                  >
-                    <i class="fab fa-whatsapp"></i> Send Message
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <div class="contact-text">
-                  <h5>Response Time</h5>
-                  <p>
-                    We typically respond within 2 hours during business hours
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="map-container fade-in">
-              <!-- Google Maps Embed Placeholder -->
-              <div class="map-placeholder">
-                <div class="text-center">
-                  <i
-                    class="fas fa-map-marked-alt"
-                    style="font-size: 3rem; margin-bottom: 1rem"
-                  ></i>
-                  <h4>Our Location</h4>
-                  <p>Nuwara Eliya, Sri Lanka</p>
-                  <a
-                    href="https://www.google.com/maps/search/nuwara+eliya"
-                    target="_blank"
-                    class="btn btn-light"
-                  >
-                    <i class="fas fa-directions"></i> Get Directions
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking Platforms Section -->
-    <section id="booking" class="section bg-light-green">
-      <div class="container">
-        <h2 class="section-title fade-in">Book Your Stay</h2>
-        <p class="section-subtitle fade-in">
-          Choose your preferred booking platform for a seamless reservation
-          experience.
-        </p>
-
-        <div class="booking-platforms fade-in">
-          <a
-            href="https://www.booking.com"
-            target="_blank"
-            class="platform-btn"
-          >
-            <i class="fas fa-bed"></i>
-            Booking.com
-          </a>
-
-          <a href="https://www.airbnb.com" target="_blank" class="platform-btn">
-            <i class="fab fa-airbnb"></i>
-            Airbnb
-          </a>
-
-          <a href="https://www.agoda.com" target="_blank" class="platform-btn">
-            <i class="fas fa-suitcase-rolling"></i>
-            Agoda
-          </a>
-
-          <a
-            href="https://wa.me/94771234567?text=Hello%20Green%20Villa%2C%20I%27d%20like%20to%20make%20a%20reservation"
-            target="_blank"
-            class="platform-btn"
-          >
-            <i class="fab fa-whatsapp"></i>
-            WhatsApp Direct
-          </a>
-        </div>
-
-        <div class="row justify-content-center mt-5">
-          <div class="col-lg-8 text-center">
-            <div class="fade-in">
-              <h4 class="text-green mb-3">Need Help Choosing?</h4>
-              <p>
-                Our team is here to help you select the perfect villa for your
-                group size and preferences. Contact us directly for personalized
-                recommendations and special arrangements.
-              </p>
-              <div class="row mt-4">
-                <div class="col-md-4 mb-3">
-                  <div class="text-center">
-                    <div class="contact-icon mx-auto mb-2">
-                      <i class="fas fa-users"></i>
-                    </div>
-                    <h6>Group Size Guidance</h6>
-                    <small class="text-muted"
-                      >We'll recommend the perfect villa</small
-                    >
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <div class="text-center">
-                    <div class="contact-icon mx-auto mb-2">
-                      <i class="fas fa-concierge-bell"></i>
-                    </div>
-                    <h6>Special Requests</h6>
-                    <small class="text-muted"
-                      >Customize your stay experience</small
-                    >
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <div class="text-center">
-                    <div class="contact-icon mx-auto mb-2">
-                      <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h6>Availability Check</h6>
-                    <small class="text-muted"
-                      >Real-time availability updates</small
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-center">
-              <h4 class="mb-4"><i class="fas fa-leaf"></i> Green Villa</h4>
-              <p class="mb-4">
-                Your home away from home in the beautiful hills of Nuwara Eliya.
-                Experience authentic Sri Lankan hospitality with modern comfort.
-              </p>
-
-              <!-- Social Media Links -->
-              <div class="social-links">
-                <a
-                  href="https://www.youtube.com"
+                  href="https://www.airbnb.com/"
                   target="_blank"
-                  class="social-link"
-                  aria-label="YouTube"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
                 >
-                  <i class="fab fa-youtube"></i>
-                </a>
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.agoda.com/"
                   target="_blank"
-                  class="social-link"
-                  aria-label="Facebook"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
                 >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.booking.com/"
                   target="_blank"
-                  class="social-link"
-                  aria-label="Instagram"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
                 >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="https://www.tiktok.com"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="TikTok"
-                >
-                  <i class="fab fa-tiktok"></i>
-                </a>
-                <a
-                  href="https://www.threads.net"
-                  target="_blank"
-                  class="social-link"
-                  aria-label="Threads"
-                >
-                  <i class="fab fa-threads"></i>
-                </a>
-              </div>
-
-              <div class="footer-text">
-                <p>
-                  &copy; 2024 Green Villa. All rights reserved. | Nuwara Eliya,
-                  Sri Lanka
-                </p>
-                <p>
-                  <small>
-                    Book through:
-                    <a
-                      href="https://www.booking.com"
-                      target="_blank"
-                      class="text-light"
-                      >Booking.com</a
-                    >
-                    |
-                    <a
-                      href="https://www.airbnb.com"
-                      target="_blank"
-                      class="text-light"
-                      >Airbnb</a
-                    >
-                    |
-                    <a
-                      href="https://www.agoda.com"
-                      target="_blank"
-                      class="text-light"
-                      >Agoda</a
-                    >
-                    |
-                    <a
-                      href="https://wa.me/94771234567"
-                      target="_blank"
-                      class="text-light"
-                      >WhatsApp</a
-                    >
-                  </small>
-                </p>
               </div>
             </div>
+          </div>
+
+          <!-- GREEN MIST (14 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Mist</div>
+                  <small class="text-muted">For up to 14 adults</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>6 Bedrooms · 5 Bathrooms</li>
+                  <li>Outdoor dining area · BBQ</li>
+                  <li>Wi‑Fi · Pool access · Parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN MEADOW (15 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Meadow</div>
+                  <small class="text-muted">For up to 15 adults</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>7 Bedrooms · 6 Bathrooms</li>
+                  <li>Large kitchen · Dining hall</li>
+                  <li>Wi‑Fi · Garden · Parking</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN LODGE (23 adults) -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card villa-card h-100 p-3">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3"
+              >
+                <div>
+                  <div class="logo-mark">Green Lodge</div>
+                  <small class="text-muted">For up to 23 adults</small>
+                </div>
+                <div class="text-end">
+                  <small class="text-muted">Large group villa</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h6 class="mb-1">Facilities</h6>
+                <ul class="small text-muted">
+                  <li>10 Bedrooms · 8 Bathrooms</li>
+                  <li>Large dining hall · Meeting space</li>
+                  <li>Wi‑Fi · Parking · Outdoor garden</li>
+                  <li>Daily housekeeping · Breakfast available</li>
+                </ul>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a
+                  href="https://www.airbnb.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Airbnb</a
+                >
+                <a
+                  href="https://www.agoda.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Agoda</a
+                >
+                <a
+                  href="https://www.booking.com/"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm flex-fill"
+                  >Booking.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences" class="py-5">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-lg-6 mb-4">
+            <h2 class="brand">
+              <i class="fas fa-utensils text-green"></i> Cooking Classes
+            </h2>
+            <p class="text-muted">
+              Learn to cook traditional local dishes with our hands-on cooking
+              classes. Perfect for small groups or families — we focus on fresh,
+              locally sourced ingredients and simple techniques.
+            </p>
+            <ul class="small text-muted">
+              <li><strong>Duration:</strong> 2.5 hours</li>
+              <li><strong>Group size:</strong> 2–10 people</li>
+              <li><strong>Price (sample):</strong> from 35 USD per person</li>
+              <li>
+                <strong>Included:</strong> Ingredients, apron, recipe card, meal
+                after class
+              </li>
+            </ul>
+            <div class="mt-3">
+              <a
+                href="https://wa.me/00000000000?text=I%20want%20to%20book%20a%20cooking%20class"
+                target="_blank"
+                class="btn btn-success me-2"
+                >Book on WhatsApp</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary"
+                >Call to Reserve</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <h2 class="brand">
+              <i class="fas fa-hiking text-green"></i> Tours
+            </h2>
+            <p class="text-muted">
+              We offer curated half-day and full-day tours that introduce guests
+              to local culture, nature walks and markets.
+            </p>
+            <div class="list-group small">
+              <div class="list-group-item">
+                <h6 class="mb-1">Cultural Village Tour — 3 hours</h6>
+                <p class="mb-1 text-muted">
+                  Visit a nearby village, tea tasting, and traditional crafts
+                  demonstration.
+                </p>
+                <small>From 45 USD per person</small>
+              </div>
+              <div class="list-group-item">
+                <h6 class="mb-1">Nature & Waterfall Hike — Half day</h6>
+                <p class="mb-1 text-muted">
+                  Guided hike to a scenic waterfall, picnic lunch included.
+                </p>
+                <small>From 55 USD per person</small>
+              </div>
+              <div class="list-group-item">
+                <h6 class="mb-1">Market & Cooking Combo — Full day</h6>
+                <p class="mb-1 text-muted">
+                  Morning market visit with a local guide, followed by a cooking
+                  class using purchased ingredients.
+                </p>
+                <small>From 85 USD per person</small>
+              </div>
+            </div>
+            <div class="mt-3">
+              <a
+                href="https://wa.me/00000000000?text=I%20want%20to%20book%20a%20tour"
+                target="_blank"
+                class="btn btn-success me-2"
+                >Book on WhatsApp</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary"
+                >Call to Reserve</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-5 bg-white">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="brand mb-0">Gallery</h2>
+          <p class="mb-0 small text-muted">
+            All villa and experience photos are shown here. Replace placeholders
+            with your images.
+          </p>
+        </div>
+
+        <div class="row g-3" id="gallery-grid">
+          <!-- Use real images: replace the src with your actual gallery photos -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=101"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 1"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=101"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=102"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 2"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=102"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=103"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 3"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=103"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=104"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 4"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=104"
+            />
+          </div>
+
+          <!-- Additional placeholders -->
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=105"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 5"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=105"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <img
+              src="https://picsum.photos/800/600?random=106"
+              class="gallery-img rounded shadow-sm"
+              alt="Gallery image 6"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-src="https://picsum.photos/1200/900?random=106"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal for larger view -->
+      <div class="modal fade" id="galleryModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <button
+                type="button"
+                class="btn-close position-absolute m-3 end-0"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <img
+                src=""
+                id="galleryModalImg"
+                alt="Gallery large"
+                style="width: 100%; height: auto; display: block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="brand mb-0">Guest Reviews</h2>
+          <p class="mb-0 small text-muted">
+            Read what guests say about us — live Google reviews embed below
+            (placeholder).
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <!-- Static example reviews (good for SEO) -->
+            <div class="card p-3 mb-3">
+              <blockquote class="blockquote mb-0">
+                <p>
+                  "Beautiful villas, excellent hosts and a memorable cooking
+                  class — we will come back!"
+                </p>
+                <footer class="blockquote-footer">
+                  Sarah L.
+                  <cite title="Source Title"> — Stayed April 2025</cite>
+                </footer>
+              </blockquote>
+            </div>
+
+            <div class="card p-3 mb-3">
+              <blockquote class="blockquote mb-0">
+                <p>
+                  "Perfect for a family reunion. The Green Lodge was roomy and
+                  the staff were amazing."
+                </p>
+                <footer class="blockquote-footer">
+                  The Fernando Family
+                  <cite title="Source Title"> — Stayed January 2025</cite>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <!-- Google Maps embed used as a placeholder for reviews UI. Replace with official embeds if available. -->
+            <div class="ratio ratio-16x9">
+              <!-- Use the provided maps.app link for quick navigation; replace the src below with an official Google Maps embed link if you have one. -->
+              <iframe
+                src="https://www.google.com/maps?q=Green+Villa&output=embed"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / MAP -->
+    <section id="location" class="py-5 bg-white">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h2 class="brand">Location</h2>
+            <p class="text-muted">
+              We are easy to reach from major towns and within scenic
+              surroundings. Click the map to open directions in Google Maps.
+            </p>
+            <p class="small text-muted">
+              Quick link:
+              <a
+                href="https://maps.app.goo.gl/VcrgcvoKpKxZNUn18"
+                target="_blank"
+                >Open in Google Maps</a
+              >
+            </p>
+
+            <ul class="list-unstyled small text-muted">
+              <li>
+                <strong>Address:</strong> 123 Green Lane, Countryside (sample)
+              </li>
+              <li><strong>Phone:</strong> +1 (234) 567-890</li>
+              <li><strong>Email:</strong> hello@greenvilla.example</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <!-- Replace with official Google Maps embed if you have it; this is a general search embed as a placeholder. -->
+              <iframe
+                src="https://www.google.com/maps?q=Green+Villa&output=embed"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / RESERVE -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h2 class="brand">Contact & Reservations</h2>
+            <p class="text-muted">
+              To reserve a villa, book a cooking class or arrange a tour,
+              contact us by WhatsApp, phone or email. We typically respond
+              within a few hours.
+            </p>
+
+            <div class="mb-3">
+              <a
+                href="https://wa.me/00000000000?text=Hello%20Green%20Villa%20--%20I%20want%20to%20make%20a%20reservation"
+                target="_blank"
+                class="btn btn-success me-2"
+                >WhatsApp Us</a
+              >
+              <a href="tel:+1234567890" class="btn btn-outline-secondary me-2"
+                >Call +1 (234) 567-890</a
+              >
+              <a
+                href="mailto:hello@greenvilla.example"
+                class="btn btn-outline-secondary"
+                >Email</a
+              >
+            </div>
+
+            <!-- Simple contact form (sends via mailto by default). Replace action with server endpoint or form service if desired. -->
+            <form id="contactForm" onsubmit="return submitContactForm(event);">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <button class="btn cta-btn" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <h6 class="mb-3">Connect with us</h6>
+            <p class="small text-muted">
+              Follow Green Villa on social media for updates and
+              behind-the-scenes.
+            </p>
+            <div class="d-flex gap-2 mb-4">
+              <a
+                class="social-icon"
+                href="https://youtube.com/"
+                target="_blank"
+                aria-label="YouTube"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23 7.00002C23 7.00002 23.25 5.5 22.25 4.75C21.25 3.99998 19.75 4 19 4C15.75 4 12 4 12 4H12C12 4 8.25 4 5 4C4.25 4 2.75 3.99998 1.75 4.75C0.75 5.5 1 7.00002 1 7.00002C1 7.00002 1 9.25 1 11.5V12.5C1 14.75 1 17 1 17C1 17 0.75 18.5 1.75 19.25C2.75 20 4.25 20 5 20C8.25 20 12 20 12 20C12 20 15.75 20 19 20C19.75 20 21.25 19.9999 22.25 19.25C23.25 18.5 23 17 23 17C23 17 23 14.75 23 12.5V11.5C23 9.25 23 7.00002 23 7.00002Z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5 3.657 9.128 8.438 9.878v-6.99H7.898v-2.887h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.887h-2.33v6.99C18.343 21.128 22 17 22 12z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zM12 7.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm5.75-2a1.25 1.25 0 11-1.25 1.25A1.25 1.25 0 0117.75 5.5z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://tiktok.com/"
+                target="_blank"
+                aria-label="TikTok"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 3v12.5a3.5 3.5 0 103.5-3.5V6h3.5A6.5 6.5 0 0120 12.5V14a6.5 6.5 0 11-6.5-6.5H9z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+              <a
+                class="social-icon"
+                href="https://www.threads.net/"
+                target="_blank"
+                aria-label="Threads"
+                ><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20z"
+                    fill="currentColor"
+                  /></svg
+              ></a>
+            </div>
+
+            <h6 class="mb-2">Subscribe for updates</h6>
+            <form
+              class="d-flex"
+              onsubmit="event.preventDefault();alert('Subscribed (placeholder)');"
+            >
+              <input
+                class="form-control me-2"
+                placeholder="Your email"
+                aria-label="Email"
+              />
+              <button class="btn cta-btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 mt-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <img src="/favicon.ico" alt="logo" width="40" height="40" />
+              <div>
+                <div class="brand">Green Villa</div>
+                <small class="text-muted"
+                  >© <span id="year"></span> Green Villa. All rights
+                  reserved.</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <small class="text-muted"
+              >123 Green Lane, Countryside · Phone: +1 (234) 567-890 ·
+              hello@greenvilla.example</small
+            >
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- SCRIPTS -->
+    <!-- jQuery (requested), Popper & Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
-    <!-- Custom JavaScript -->
     <script>
-      /* ===========================================
-           CUSTOM JAVASCRIPT FOR GREEN VILLA WEBSITE
-           Professional Developer Implementation
-           =========================================== */
+      // Update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Wait for DOM to be fully loaded
-      document.addEventListener("DOMContentLoaded", function () {
-        // ===========================================
-        // NAVIGATION SCROLL EFFECTS
-        // ===========================================
-
-        const navbar = document.querySelector(".navbar");
-        let lastScrollTop = 0;
-
-        // Add scroll event listener for navbar effects
-        window.addEventListener("scroll", function () {
-          const scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop;
-
-          // Add/remove scrolled class based on scroll position
-          if (scrollTop > 100) {
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
-
-          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+      // Gallery modal image swap
+      (function () {
+        var galleryModal = document.getElementById("galleryModal");
+        galleryModal.addEventListener("show.bs.modal", function (event) {
+          var img = event.relatedTarget; // the clicked image
+          var src = img.getAttribute("data-src") || img.getAttribute("src");
+          document.getElementById("galleryModalImg").setAttribute("src", src);
         });
+      })();
 
-        // ===========================================
-        // SMOOTH SCROLLING FOR NAVIGATION LINKS
-        // ===========================================
+      // Contact form submission handler (placeholder)
+      function submitContactForm(e) {
+        e.preventDefault();
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var message = document.getElementById("message").value.trim();
+        if (!name || !email || !message) {
+          alert("Please complete all fields.");
+          return false;
+        }
+        // Default behaviour: open mail client with prefilled subject/body (replace with server endpoint if available)
+        var subject = encodeURIComponent(
+          "Green Villa reservation / inquiry from " + name
+        );
+        var body = encodeURIComponent(
+          "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
+        );
+        window.location.href =
+          "mailto:hello@greenvilla.example?subject=" +
+          subject +
+          "&body=" +
+          body;
+        return false;
+      }
 
-        const navLinks = document.querySelectorAll('a[href^="#"]');
-
-        navLinks.forEach(function (link) {
-          link.addEventListener("click", function (e) {
+      // Small UX: smooth scrolling for internal anchors
+      $(function () {
+        $('a[href^="#"]').on("click", function (e) {
+          var target = this.hash;
+          if (target.length) {
             e.preventDefault();
-
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-              const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
-
-              window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-              });
-
-              // Close mobile menu if open
-              const navbarCollapse = document.querySelector(".navbar-collapse");
-              if (navbarCollapse.classList.contains("show")) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                  toggle: false,
-                });
-                bsCollapse.hide();
-              }
-            }
-          });
-        });
-
-        // ===========================================
-        // INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS
-        // ===========================================
-
-        const fadeElements = document.querySelectorAll(".fade-in");
-
-        const fadeObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-
-                // Add staggered animation delay for multiple elements
-                const index = Array.from(
-                  entry.target.parentNode.children
-                ).indexOf(entry.target);
-                entry.target.style.animationDelay = index * 0.1 + "s";
-              }
-            });
-          },
-          {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px",
-          }
-        );
-
-        fadeElements.forEach(function (element) {
-          fadeObserver.observe(element);
-        });
-
-        // ===========================================
-        // ACTIVE NAVIGATION HIGHLIGHTING
-        // ===========================================
-
-        const sections = document.querySelectorAll("section[id]");
-        const navItems = document.querySelectorAll(".navbar-nav .nav-link");
-
-        const sectionObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                const currentSection = entry.target.getAttribute("id");
-
-                // Remove active class from all nav items
-                navItems.forEach(function (navItem) {
-                  navItem.classList.remove("active");
-                });
-
-                // Add active class to current section's nav item
-                const activeNavItem = document.querySelector(
-                  '.navbar-nav .nav-link[href="#' + currentSection + '"]'
-                );
-                if (activeNavItem) {
-                  activeNavItem.classList.add("active");
-                }
-              }
-            });
-          },
-          {
-            threshold: 0.3,
-            rootMargin: "-80px 0px -80px 0px",
-          }
-        );
-
-        sections.forEach(function (section) {
-          sectionObserver.observe(section);
-        });
-
-        // ===========================================
-        // VILLA CARD HOVER EFFECTS
-        // ===========================================
-
-        const villaCards = document.querySelectorAll(".villa-card");
-
-        villaCards.forEach(function (card) {
-          card.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-10px) scale(1.02)";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0) scale(1)";
-          });
-        });
-
-        // ===========================================
-        // GALLERY ITEM INTERACTIONS
-        // ===========================================
-
-        const galleryItems = document.querySelectorAll(".gallery-item");
-
-        galleryItems.forEach(function (item) {
-          item.addEventListener("click", function () {
-            const text = this.querySelector(".gallery-text").textContent;
-
-            // Simple alert for demo - in production, you might open a lightbox
-            alert(
-              "Opening gallery for: " +
-                text +
-                "\n\nIn a real implementation, this would open a photo gallery or lightbox."
-            );
-          });
-
-          // Add keyboard accessibility
-          item.setAttribute("tabindex", "0");
-          item.setAttribute("role", "button");
-          item.setAttribute("aria-label", "View gallery images");
-
-          item.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              this.click();
-            }
-          });
-        });
-
-        // ===========================================
-        // BOOKING PLATFORM LINK TRACKING
-        // ===========================================
-
-        const bookingLinks = document.querySelectorAll(
-          ".platform-btn, .book-btn"
-        );
-
-        bookingLinks.forEach(function (link) {
-          link.addEventListener("click", function (e) {
-            const platform = this.textContent.trim();
-
-            // In a real implementation, you might send analytics data here
-            console.log("Booking attempt via:", platform);
-
-            // Add a brief loading state
-            const originalText = this.innerHTML;
-            this.innerHTML =
-              '<i class="fas fa-spinner fa-spin"></i> Opening...';
-            this.style.pointerEvents = "none";
-
-            setTimeout(() => {
-              this.innerHTML = originalText;
-              this.style.pointerEvents = "auto";
-            }, 1500);
-          });
-        });
-
-        // ===========================================
-        // WHATSAPP LINK ENHANCEMENT
-        // ===========================================
-
-        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-
-        whatsappLinks.forEach(function (link) {
-          // Enhance WhatsApp links with proper formatting
-          link.addEventListener("click", function (e) {
-            // Add analytics tracking or additional logic here
-            console.log("WhatsApp contact initiated");
-          });
-        });
-
-        // ===========================================
-        // FORM VALIDATION (if forms are added later)
-        // ===========================================
-
-        function validateEmail(email) {
-          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return re.test(email);
-        }
-
-        // ===========================================
-        // PERFORMANCE OPTIMIZATIONS
-        // ===========================================
-
-        // Lazy loading for images (when real images are added)
-        function lazyLoadImages() {
-          const images = document.querySelectorAll("img[data-src]");
-
-          const imageObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add("loaded");
-                imageObserver.unobserve(img);
-              }
-            });
-          });
-
-          images.forEach(function (img) {
-            imageObserver.observe(img);
-          });
-        }
-
-        // Initialize lazy loading
-        lazyLoadImages();
-
-        // ===========================================
-        // ACCESSIBILITY ENHANCEMENTS
-        // ===========================================
-
-        // Skip link functionality
-        const skipLink = document.querySelector(".skip-link");
-        if (skipLink) {
-          skipLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.focus();
-              target.scrollIntoView();
-            }
-          });
-        }
-
-        // Keyboard navigation for interactive elements
-        document.addEventListener("keydown", function (e) {
-          // ESC key to close mobile menu
-          if (e.key === "Escape") {
-            const navbarCollapse = document.querySelector(
-              ".navbar-collapse.show"
-            );
-            if (navbarCollapse) {
-              const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false,
-              });
-              bsCollapse.hide();
-            }
-          }
-        });
-
-        // ===========================================
-        // DYNAMIC CONTENT LOADING
-        // ===========================================
-
-        // Function to load additional content (for future enhancements)
-        function loadContent(url, targetElement) {
-          fetch(url)
-            .then((response) => response.text())
-            .then((data) => {
-              targetElement.innerHTML = data;
-
-              // Re-initialize observers for new content
-              const newFadeElements =
-                targetElement.querySelectorAll(".fade-in");
-              newFadeElements.forEach(function (element) {
-                fadeObserver.observe(element);
-              });
-            })
-            .catch((error) => {
-              console.error("Error loading content:", error);
-              targetElement.innerHTML =
-                "<p>Error loading content. Please refresh the page.</p>";
-            });
-        }
-
-        // ===========================================
-        // ERROR HANDLING
-        // ===========================================
-
-        // Global error handler for any JavaScript errors
-        window.addEventListener("error", function (e) {
-          console.error("Global error:", e.error);
-
-          // In production, you might want to send error reports to a service
-          // logErrorToService(e.error);
-        });
-
-        // ===========================================
-        // UTILITY FUNCTIONS
-        // ===========================================
-
-        // Debounce function for performance optimization
-        function debounce(func, wait, immediate) {
-          let timeout;
-          return function executedFunction() {
-            const context = this;
-            const args = arguments;
-
-            const later = function () {
-              timeout = null;
-              if (!immediate) func.apply(context, args);
-            };
-
-            const callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-
-            if (callNow) func.apply(context, args);
-          };
-        }
-
-        // Throttle function for scroll events
-        function throttle(func, limit) {
-          let inThrottle;
-          return function () {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-              func.apply(context, args);
-              inThrottle = true;
-              setTimeout(() => (inThrottle = false), limit);
-            }
-          };
-        }
-
-        // ===========================================
-        // INITIALIZATION COMPLETE
-        // ===========================================
-
-        console.log("Green Villa website initialized successfully");
-
-        // Add a subtle loading animation completion
-        document.body.classList.add("loaded");
-      }); // End of DOMContentLoaded event listener
-
-      // ===========================================
-      // ADDITIONAL UTILITY FUNCTIONS (Global Scope)
-      // ===========================================
-
-      // Function to update villa availability (for future integration)
-      function updateAvailability(villaId, isAvailable) {
-        const villaElement = document.querySelector(
-          `[data-villa-id="${villaId}"]`
-        );
-        if (villaElement) {
-          const bookButton = villaElement.querySelector(".book-btn");
-          if (bookButton) {
-            if (isAvailable) {
-              bookButton.classList.remove("disabled");
-              bookButton.textContent = bookButton.textContent.replace(
-                "Not Available",
-                "Book Now"
+            var $target = $(target);
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: $target.offset().top - 70,
+                },
+                500,
+                "swing"
               );
-            } else {
-              bookButton.classList.add("disabled");
-              bookButton.textContent = bookButton.textContent.replace(
-                "Book Now",
-                "Not Available"
-              );
-            }
           }
-        }
-      }
+        });
+      });
 
-      // Function to show success/error messages
-      function showMessage(message, type = "info") {
-        const alertDiv = document.createElement("div");
-        alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
-        alertDiv.style.cssText =
-          "top: 100px; right: 20px; z-index: 9999; max-width: 400px;";
-        alertDiv.innerHTML = `
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `;
-
-        document.body.appendChild(alertDiv);
-
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-          if (alertDiv.parentNode) {
-            alertDiv.parentNode.removeChild(alertDiv);
-          }
-        }, 5000);
-      }
-
-      // Function to format phone numbers (Sri Lankan format)
-      function formatPhoneNumber(phone) {
-        // Remove all non-numeric characters
-        const cleaned = phone.replace(/\D/g, "");
-
-        // Format as Sri Lankan number
-        if (cleaned.length === 10 && cleaned.startsWith("0")) {
-          return (
-            "+94 " +
-            cleaned.substring(1, 3) +
-            " " +
-            cleaned.substring(3, 6) +
-            " " +
-            cleaned.substring(6)
+      // Accessibility: keyboard close for gallery modal image
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          var modal = bootstrap.Modal.getInstance(
+            document.getElementById("galleryModal")
           );
-        } else if (cleaned.length === 9) {
-          return (
-            "+94 " +
-            cleaned.substring(0, 2) +
-            " " +
-            cleaned.substring(2, 5) +
-            " " +
-            cleaned.substring(5)
-          );
+          if (modal) modal.hide();
         }
-
-        return phone; // Return original if doesn't match expected format
-      }
-    </script>
-
-    <!-- Additional CSS for JavaScript enhancements -->
-    <style>
-      /* Loading state styles */
-      body:not(.loaded) {
-        overflow: hidden;
-      }
-
-      body:not(.loaded)::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--white);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Active navigation item */
-      .navbar-nav .nav-link.active {
-        color: var(--primary-green) !important;
-        font-weight: 600;
-      }
-
-      /* Enhanced gallery hover effects */
-      .gallery-item {
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .gallery-item:focus {
-        outline: 3px solid var(--accent-green);
-        outline-offset: 4px;
-      }
-
-      /* Disabled button states */
-      .btn:disabled,
-      .btn.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      /* Skip link for accessibility */
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: var(--primary-green);
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        transition: top 0.3s;
-        z-index: 10000;
-      }
-
-      .skip-link:focus {
-        top: 6px;
-      }
-
-      /* Smooth transitions for all interactive elements */
-      a,
-      button,
-      .btn,
-      .villa-card,
-      .service-card,
-      .gallery-item {
-        transition: all 0.3s ease;
-      }
-
-      /* High contrast mode support */
-      @media (prefers-contrast: high) {
-        :root {
-          --primary-green: #1a3a15;
-          --secondary-green: #2d4a25;
-          --light-text: #333333;
-        }
-      }
-
-      /* Reduced motion support */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      /* Print optimizations */
-      @media print {
-        .fade-in {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      }
-    </style>
-
-    <!-- Schema.org Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LodgingBusiness",
-        "name": "Green Villa",
-        "description": "Premium accommodation in Nuwara Eliya with 4 unique villas, cooking classes, and tours",
-        "url": "https://greenvilla.lk",
-        "telephone": "+94-77-123-4567",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Green Villa",
-          "addressLocality": "Nuwara Eliya",
-          "addressRegion": "Central Province",
-          "addressCountry": "LK"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "6.9497",
-          "longitude": "80.7891"
-        },
-        "amenityFeature": [
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Free WiFi",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Parking",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Kitchen",
-            "value": true
-          }
-        ],
-        "priceRange": "$",
-        "servedCuisine": "Sri Lankan",
-        "paymentAccepted": ["Cash", "Credit Card"],
-        "openingHours": "Mo-Su 00:00-24:00",
-        "sameAs": [
-          "https://www.facebook.com/greenvilla",
-          "https://www.instagram.com/greenvilla",
-          "https://www.youtube.com/greenvilla"
-        ]
-      }
+      });
     </script>
   </body>
 </html>
