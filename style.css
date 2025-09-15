@@ -69,7 +69,7 @@ body {
 
 .villa-card {
   border: 1px solid rgba(33, 37, 41, 0.06);
-  background: white;
+  background: #f0ebdc;
 }
 .villa-badge {
   background: var(--green-accent);
@@ -84,6 +84,11 @@ body {
   font-family: "Playfair Display";
   color: var(--green-deep);
 }
+
+.logo-img {
+  max-height: 150px;
+}
+
 .cta-btn {
   background: var(--green-deep);
   color: white;
