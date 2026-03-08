@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luxury Stay</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* ===========================
+NAVBAR
+=========================== */
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        /* ===========================
+HERO SECTION
+=========================== */
+
+        .hero {
+            height: 90vh;
+            background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-main {
+            background: #c49a6c;
+            border: none;
+            padding: 12px 30px;
+            color: white;
+        }
+
+        .btn-main:hover {
+            background: #a98256;
+        }
+
+        /* ===========================
+SECTION SPACING
+=========================== */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        /* ===========================
+AWARDS
+=========================== */
+
+        .award-card {
+            background: #1f4037;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* ===========================
+ROOMS
+=========================== */
+
+        .room-card {
+            border: none;
+            transition: 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .room-img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* ===========================
+FEATURE ROOM
+=========================== */
+
+        .feature {
+            background: #f7f7f7;
+        }
+
+        /*  ===========================
+Image Gallery
+ =========================== */
+        .gallery-img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        /* ===========================
+PACKAGES
+=========================== */
+
+        .package-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .package-card {
+            border: none;
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: scale(1.03);
+        }
+
+        /* ===========================
+REVIEWS
+=========================== */
+
+        .review img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        /* ===========================
+FOOTER
+=========================== */
+
+        .footer {
+            background: #1f4037;
+            color: white;
+            padding: 70px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ===================================== -->
+    <!-- NAVBAR -->
+    <!-- ===================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">Tuscania</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-main ms-3" href="#">Book Now</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ===================================== -->
+    <!-- HERO SECTION -->
+    <!-- ===================================== -->
+
+    <section class="hero d-flex align-items-center text-center">
+
+        <div class="container hero-content">
+
+            <h1 class="display-4 fw-bold">Your Dream Vacation Starts Here</h1>
+
+            <p class="lead mt-3">Luxury rooms, breathtaking views, unforgettable memories.</p>
+
+            <a class="btn btn-main mt-3">Explore Rooms</a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- WELCOME SECTION -->
+    <!-- ===================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2 class="fw-bold mb-3">Your Home Away From Home</h2>
+
+                    <p>
+                        Experience world-class hospitality, beautifully designed rooms,
+                        and exceptional service that will make every moment memorable.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1560448075-bb4caa6d7a0a">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- AWARDS SECTION -->
+    <!-- ===================================== -->
+
+    <section class="section bg-light">
+
+        <div class="container text-center">
+
+            <h2 class="fw-bold mb-5">Our Awards</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="award-card">
+                        <h4>2025 B&B of the Year</h4>
+                        <p>Recognized for outstanding hospitality.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="award-card">
+                        <h4>Top 5 Stays</h4>
+                        <p>Best luxury boutique experience.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="award-card">
+                        <h4>Best Small Hotel</h4>
+                        <p>Guest satisfaction excellence.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- ROOMS SECTION -->
+    <!-- ===================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-5">Our Rooms</h2>
+
+            <div class="row g-4">
+
+                <!-- ROOM CARD -->
+
+                <div class="col-lg-4">
+
+                    <div class="card room-card">
+
+                        <img class="room-img card-img-top"
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+
+                        <div class="card-body">
+
+                            <h5>Queen Suite Deluxe</h5>
+                            <p class="text-muted">2 guests • 1 bedroom</p>
+
+                            <h6 class="fw-bold">$380 / night</h6>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="card room-card">
+
+                        <img class="room-img card-img-top"
+                            src="https://images.unsplash.com/photo-1590490360182-c33d57733427">
+
+                        <div class="card-body">
+
+                            <h5>King Suite Deluxe</h5>
+                            <p class="text-muted">3 guests • 1 bedroom</p>
+
+                            <h6 class="fw-bold">$420 / night</h6>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="card room-card">
+
+                        <img class="room-img card-img-top"
+                            src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4">
+
+                        <div class="card-body">
+
+                            <h5>King Suite + Courtyard</h5>
+                            <p class="text-muted">4 guests • 2 bedrooms</p>
+
+                            <h6 class="fw-bold">$730 / night</h6>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- FEATURE ROOM -->
+    <!-- ===================================== -->
+
+    <section class="section feature">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h2 class="fw-bold">King Suite + Courtyard</h2>
+
+                    <p>
+                        Enjoy stunning views, luxurious bedding, private balcony,
+                        and spacious interiors designed for ultimate comfort.
+                    </p>
+
+                    <a class="btn btn-main">Book This Room</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- IMAGE GALLERY SLIDER -->
+    <!-- ===================================== -->
+
+    <section class="section bg-light">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-5">Photo Gallery</h2>
+
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- indicators -->
+                <div class="carousel-indicators">
+
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+
+                </div>
+
+
+                <div class="carousel-inner rounded shadow">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                            class="d-block w-100 gallery-img">
+
+                        <div class="carousel-caption">
+                            <h5>Luxury Suites</h5>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+
+                        <img src="https://images.unsplash.com/photo-1560448075-bb4caa6d7a0a"
+                            class="d-block w-100 gallery-img">
+
+                        <div class="carousel-caption">
+                            <h5>Modern Interiors</h5>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"
+                            class="d-block w-100 gallery-img">
+
+                        <div class="carousel-caption">
+                            <h5>Infinity Pool</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- controls -->
+
+                <button class="carousel-control-prev" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- PACKAGES -->
+    <!-- ===================================== -->
+
+    <section class="section bg-light">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-5">Packages & Discounts</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card package-card">
+
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+
+                        <div class="card-body">
+
+                            <h5>Seasonal Packages</h5>
+                            <p>Exclusive deals during holidays.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card package-card">
+
+                        <img src="https://images.unsplash.com/photo-1551776235-dde6d4829808">
+
+                        <div class="card-body">
+
+                            <h5>Stay Longer & Save</h5>
+                            <p>Special discount for extended stays.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card package-card">
+
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+
+                        <div class="card-body">
+
+                            <h5>50% Off Third Night</h5>
+                            <p>Book 3 nights and save more.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- REVIEWS -->
+    <!-- ===================================== -->
+
+    <section class="section">
+
+        <div class="container text-center">
+
+            <h2 class="fw-bold mb-5">Guest Reviews</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4 review">
+
+                    <img class="rounded-circle mb-3" src="https://randomuser.me/api/portraits/women/44.jpg">
+
+                    <p>"Absolutely amazing stay. The rooms were beautiful!"</p>
+
+                    <strong>- Kiara</strong>
+
+                </div>
+
+                <div class="col-md-4 review">
+
+                    <img class="rounded-circle mb-3" src="https://randomuser.me/api/portraits/women/65.jpg">
+
+                    <p>"One of the best boutique hotels I've visited."</p>
+
+                    <strong>- Carole</strong>
+
+                </div>
+
+                <div class="col-md-4 review">
+
+                    <img class="rounded-circle mb-3" src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                    <p>"Fantastic experience and incredible service."</p>
+
+                    <strong>- Steve</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- FOOTER / CONTACT -->
+    <!-- ===================================== -->
+
+    <section class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <h3>Book Your Stay</h3>
+
+                    <p>Phone: (123) 456-7890</p>
+
+                    <p>Email: hello@tuscaniahotel.com</p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
